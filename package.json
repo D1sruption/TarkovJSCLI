@@ -1,0 +1,102 @@
+{
+  "name": "tarkov_js_cli",
+  "productName": "tarkov_js_cli",
+  "version": "0.1.0",
+  "description": "IgnitionCorp",
+  "main": "Main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": "Ignition",
+  "license": "MIT",
+  "directories": {
+    "buildResources": "./"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "osxSign": {
+          "identity": "Developer ID Application: Aaron Fankhauser (CL7LMD787A)"
+        },
+        "icon": "",
+        "executableName": "TarkovAPIManipulator",
+        "asar": {
+          "unpackDir": "{src/js}"
+        },
+        "extendInfo": "Info.plist"
+      },
+      "electronWinstallerConfig": {
+        "iconUrl": ""
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "TarkovAPIManipulator",
+            "iconUrl": "",
+            "loadingGif": "",
+            "setupIcon": ""
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-nucleus",
+          "config": {
+            "host": "",
+            "appId": "",
+            "channelId": "",
+            "token": ""
+          }
+        }
+      ]
+    }
+  },
+  "icon": "",
+  "dependencies": {
+    "diff": "^4.0.1",
+    "electron-cookies": "^1.1.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-log": "^3.0.5",
+    "electron-settings": "^3.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "https": "^1.0.0",
+    "jquery": "^3.4.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.33",
+    "@electron-forge/maker-deb": "6.0.0-beta.33",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.33",
+    "@electron-forge/maker-rpm": "6.0.0-beta.33",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.34",
+    "@electron-forge/maker-zip": "6.0.0-beta.33",
+    "@electron-forge/publisher-nucleus": "^6.0.0-beta.33",
+    "@types/node": "^11.11.3",
+    "electron": "^4.1.4",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
